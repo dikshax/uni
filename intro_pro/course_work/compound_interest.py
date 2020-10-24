@@ -10,16 +10,18 @@ import math   # using the python math module to round the answers
 # A Simple and Compound Interest Calulator
 
 def print_intro():
-    ''' printing a welcome note, explain the purple of the programm to the user'''
-
-    return ('''Welcome to the Wolving compound interest calculator.
+    ''' printing a welcome note, explain the purpose of the programm to the user'''
+    print('''Welcome to the Wolving compound interest calculator.
 This program calculates your potential returns when you invest with us.''')
 
 
 
 def get_input():
-    '''Asking the user for principal, rate, years and return them'''
+    '''Asking the user for principal, rate and years.
 
+    Returns:
+        principal, rate and years
+    '''
     principal = float(input('How much would you like to invest? '))
     rate = float(input('What is the intrest rate on your account? '))
     years = int(input('How logn are you planning to  invest (in years)? '))
@@ -28,38 +30,78 @@ def get_input():
 
 
 def simple_interest(principal, rate, years):
-    '''This function will calculate simple interest and return'''
+    '''
+    This function will calculate simple interest and return it.
 
+    Keyword argumrnts:
+        principal: the original value for the investment.
+        rate: the rate of investment.
+        years: how many years invested for?
+
+    Return:
+        The simple interest.
+    '''
     end_amount_simp = principal*(1 + (rate/100) * years)
     return end_amount_simp
 
 
 def compound_interest(principal, rate, years):
-    '''This function will calcualte compount interest and return'''
+    '''
+    This function will calcualte compount interest and return it.
 
+    Keyword argumrnts:
+        principal: the original value for the investment.
+        rate: the rate of investment.
+        years: how many years invested for?
+
+    Returns:
+        The compount interest.
+    '''
     end_amount_comp = principal * (1 + (rate/100) / 4) ** (4 * years)
     return end_amount_comp
 
 
 def print_simple_output(principal, rate, years, result):
-    '''This function takes 4 positional arguments,
-    uses f-string to make them easy for the eyes and return them'''
+    '''
+    Returning a formatted stirng.
 
+    Parameters:
+        principal: the original value for the investment.
+        rate: the rate of investment.
+        years: how many years invested for?
+        result: the result from simple_interest()
+
+    Returns:
+        uses f-string to format the output nicely.
+    '''
     return f'£{principal} invested at {rate}% for {years} years is: £{round(result, 2)}'
 
 
 def print_compounding_output(principal, rate, years, result):
-    '''This function takes 4 positional arguments,
-    uses f-string to display them better and return it'''
+    '''
+    Returning a formatted stirng.
 
+    Parameters:
+        principal: the original value for the investment.
+        rate: the rate of investment.
+        years: how many years invested for?
+        result: the result from compound_interest()
+
+    Returns:
+        uses f-string to format the output nicely.
+    '''
     return f'£{principal} invested at {rate}% for {years} years compounded 4 times per year is: £{round(result, 2)}'
 
 
 # ---------- Challenge Functions (Optional) ----------
 
 def get_target_input():
-    '''Asking the user for principal value, interest rate, goal and return them'''
+    '''
+    Asking the user for principal, rate and goal.
 
+    Returns:
+        principal, value, rate, goal.
+    '''
     principal = float(input('What is the principal amount? '))
     rate = float(input('What is the rate? '))
     goal = float(input('What is your savings goal? '))
@@ -75,7 +117,6 @@ def calculate_years_to_target(principal, rate, target):
 
 def print_target_output(principal, rate, years):
     '''This function will just display its passed in arguments in a readable way.'''
-
     return f'£{principal} invested at {rate}% will allow you to reach your goal in {years} years.'
 
 
@@ -85,12 +126,12 @@ def print_target_output(principal, rate, years):
 # 3.	Perform the simple and compound interest calculations.
 # 4.	Print the results to the terminal in the format specified.
 def main():
-    print(print_intro())
+    print_intro()
 
     answer = int(input('''Would you like to:
         1. Calculate simple and compoint interest over time
         2. Calculate the amount of time required to hit a savings goal.
-        > Enter your option: '''))
+        '''))
 
     if answer == 1:
 
