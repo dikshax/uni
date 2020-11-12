@@ -51,6 +51,10 @@ def four():
     words = words.split()
     words.sort()
     for word in words:
-        print(word)
+        return word
 one = four()
 print(one)
+
+
+# 5. write a python program that prompts the user to enter integer balues to populate two list, then print messages to determine the follow
+
