@@ -3,29 +3,36 @@
 morse_dic = {'A':'.-', 'B':'-...', 'C':'-.-.', 'D':'-..', 'E':'.', 'F':'..-.', 'G':'--.', 'H':'....', 'I':'..', 'J':'.---', 'K':'-.-', 'L':'.-..', 'M':'--', 'N':'-.', 'O':'---', 'P':'.--.', 'Q':'--.-', 'R':'.-.', 'S':'...', 'T':'-', 'U':'..-', 'V':'...-', 'W':'.--', 'X':'-..-', 'Y':'-.--', 'Z':'--..', '.':'.-.-.-', '0':'-----', '1':'.----', '2':'..---', '3':'...--', '4':'....-', '5':'.....', '6':'-....', '7':'--...', '8':'---..', '9':'----.', '(':'-.--.', ')':'-.--.-', '&':'.-...', ':':'---...', ';':'-.-.-.', '=':'-...-', '+':'.-.-.', '-':'-....-', '_':'..--.-', '"':'.-..-.', '$':'...-..-', '@':'.--.-.', '?':'..--..', '!':'-.-.--'}
 
 
-message = 'T'
+message = 'HELLO WORLD'
 
 def encode(message):
-    final_code =''
+    cipher =''
 
     for letter in message:
-        final_code += morse_dic[letter]
-    return final_code
+    	if letter != ' ':
+        	cipher += morse_dic[letter] + ' '
+        else:
+        	cipher += '   '
+    return cipher
 
 
 work = encode(message)
 print(work)
 
-
-message = '-'
+message = '.... . .-.. .-.. ---    .-- --- .-. .-.. -..'
 def decode(message):
-    final_string = ''
+	decipher = ''
 
-    for chractor in message:
-        final_string += morse_dic[chractor]
-
-    return final_string
-
+	words = message.split('   ')
+	for morse_word in words:
+		chars = morse_word.split()
+		for char in chars:
+			for key, value in morse_dic.items():
+				if char == value:
+					decipher += key
+		decipher += ' '
+	return decipher
+		
 
 work = decode(message)
 print(work)
