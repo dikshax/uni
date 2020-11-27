@@ -41,12 +41,14 @@ one = finding_e()
 
 # 4. Write a program that reads a text file containing numerical expressions on each line and print them out along with the results. For example, for the numerical expression 4 + 2 in your file, your program should output: 4 + 2 = 6.
 
-# def operations():
-#     with open('numbers.txt', 'r') as file:
-#         lines = file.readlines()
-#         for x in lines:
-#             first_num = x[0]
-#             second_num = x[4]
-#             sing = x[2]
-#             result = first_num sing second_num
-#             return result
+def operations():
+    with open('numbers.txt', 'r') as file:
+        lines = file.readlines()
+        lines = ''.join(lines)
+        # print(lines)
+
+        for x in lines:
+            nums = [z for z in x if z.isdigit()]
+            print(nums)
+          
+operations()
