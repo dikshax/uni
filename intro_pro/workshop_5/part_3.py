@@ -62,10 +62,28 @@ def four():
 def five():
     list_1_nums = input('numbers for list one: ')
     list_1 = [int(x) for x in list_1_nums.split()]
-    return list_1
+    
+    list_2_nums = input('numbers for list two: ')
+    list_2 = [int(x) for x in list_2_nums.split()]
+
+    if len(list_1) == len(list_2):
+        print(f'there is {len(list_1)} numbers in list one and {len(list_2)} in list two, so they are the same length.')
+    elif len(list_1) != len(list_2): 
+        print(f'there is {len(list_1)} numbers in list one and {len(list_2)} in list two, so they are not the same length!!')
+
+    if sum(list_1) == sum(list_2):
+        print(f'the sum of list one is {sum(list_1)} and sum of list two is {sum(list_2)}, AND they both the same!')
+    elif sum(list_1) != sum(list_2):
+        print(f'sum of list one is: {sum(list_1)} and sum of list two is: {sum(list_2)}, and they are NOT the same!!')
+
+    in_both_lists = ', '.join([str(x) for x in list_1 if x in list_2])
+    if len(in_both_lists) > 0:
+       print(f'{in_both_lists}, appearse in both lists.!')
+    else:
+        print('there is no number that appearse in both lists!!')
+
 
 one = five()
-print(one)
 
 
 
