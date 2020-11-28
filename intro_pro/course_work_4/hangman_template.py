@@ -52,8 +52,6 @@ def load_words():
         print(f'{len(words_list)} words loaded.')
         return words_list   
 
-wordlist = load_words()
-
 
 def is_word_guessed(word, letters_guessed):
     letters_guessed = [x for x in letters_guessed]
@@ -85,9 +83,7 @@ def get_remaining_letters(letters_guessed):
 def hangman(word):
     print("Welcome to Hangman Ultimate Edition")
     print(f"I am thinking of a word that is {len(word)} letters long")
-    print("-------------")
-    # TODO: Fill in your code here
-
+    print("-" * 12)
 
 # ---------- Challenge Functions (Optional) ----------
 
@@ -113,7 +109,18 @@ def main():
 
     # Uncomment the line below once you have implemented the hangman function.
     # hangman(word)
-    pass
+    GUESSES = 6
+
+    word = load_words()
+    word = random.choice(word)
+
+    hangman(word)
+    print(f'You have {GUESSES} guesses left.')
+    available_letters = string.ascii_lowercase
+    print(f'Available letters: {available_letters}')
+    guessed_letter = input('Please guess a letter: ').lower()
+    
+    get_guessed_word(word, guessed_letter)
 
 # Driver function for the program
 if __name__ == "__main__":

@@ -1,5 +1,6 @@
 import random
 import string
+import csv
 
 
 def load_words():
@@ -16,7 +17,9 @@ def load_words():
         words_list = words.split()
         print(f'{len(words_list)} words loaded.')
         return words_list    
-load_words()
+one = load_words()
+secret_word = random.choice(one)
+print(secret_word)
 
 letters_guessed = ['m', 'a', 'n', 's', 'x', 'l', 'o', 'u', 'd']
 word = 'mans'
@@ -58,3 +61,35 @@ def get_remaining_letters(letters_guessed):
 
 # one = get_remaining_letters(letters_guessed)
 # print(one)
+
+name = 'mansoud'
+dict = {'Python' : '.py', 'C++' : '.cpp', 'Java' : '.java'}
+w = csv.writer(open('output.csv', 'w'))
+for key, val in dict.items():
+    w.writerow([key, val])
+
+def get_score(name):
+    with open('score_table.csv', 'w') as file:
+        file = file.readline()
+        print(file)
+        print(type(file))
+        # if name not in file:
+        #     print('Sorry, name not found!')
+        # else:
+        #     high_score = file.get(name)
+        #     return high_score
+
+# one = get_score(name)
+# print(one)
+
+
+def save_score(name, score):
+    pass
+# one = save_score(name, 12334)
+# print(one)
+
+
+def main():
+    load_words()
+
+    
