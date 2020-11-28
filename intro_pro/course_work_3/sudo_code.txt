@@ -1,0 +1,7 @@
+for the encode function:
+0- create a blank string to store translation.
+1- iterate through the words in our meddage
+2- iterate through the characters in each word
+3- iterate through our morse_code data structure
+4- comparing the current character to each of the morse translations
+5- if we dind a matching tranlation, append to s string.
