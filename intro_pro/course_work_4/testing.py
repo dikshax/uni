@@ -16,10 +16,10 @@ def load_words():
         words = ' '.join(words)
         words_list = words.split()
         print(f'{len(words_list)} words loaded.')
-        return words_list    
-one = load_words()
-secret_word = random.choice(one)
-print(secret_word)
+        return words_list
+# one = load_words()
+# secret_word = random.choice(one)
+# print(secret_word)
 
 letters_guessed = ['m', 'a', 'n', 's', 'x', 'l', 'o', 'u', 'd']
 word = 'mans'
@@ -33,7 +33,7 @@ def is_word_guessed(word, letters_guessed):
     return maybe
 
 
-one = is_word_guessed(word, letters_guessed)
+# one = is_word_guessed(word, letters_guessed)
 # print(one)
 
 letters_guessed = ['m', 'a', 'n', 's', 'x', 'l', 'o', 'u', 'd']
@@ -47,8 +47,8 @@ def get_guessed_word(word, letters_guessed):
             placeholder += '_ '
     return placeholder
 
-# one = get_guessed_word(word, letters_guessed)
-# print(one)
+one = get_guessed_word(word, letters_guessed)
+print(one)
 
 def get_remaining_letters(letters_guessed):
     alphabet = string.ascii_lowercase
@@ -92,4 +92,3 @@ def save_score(name, score):
 def main():
     load_words()
 
-    

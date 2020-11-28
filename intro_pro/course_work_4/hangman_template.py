@@ -1,6 +1,6 @@
 # Coding Challenge 3, hangman.py
-# Name:
-# Student No:
+# Name:̣ Masnoud Mansouri
+# Student No: 1916829
 
 # Hangman Game
 
@@ -38,9 +38,18 @@ def choose_random_word(all_words):
 # -----------------------------------
 
 def load_words():
+    '''
+    opens the txt file and return a list of content.
+
+            Parameter:
+                None
+
+            Returns:
+                words_list (list): a list of words from file
+    '''
     print('Loading word list from file: words.txt')
     try:
-        with open('word.txt', 'r') as file:
+        with open('words.txt', 'r') as file:
             words = file.readlines()
     except FileNotFoundError as error:
         print(f'Sorry, {error}')
@@ -50,18 +59,38 @@ def load_words():
         words = ' '.join(words)
         words_list = words.split()
         print(f'{len(words_list)} words loaded.')
-        return words_list   
+        return words_list
 
 
 def is_word_guessed(word, letters_guessed):
+    '''
+    checking if the  letters_guessed are in word.
+
+            Parameters:
+                word (str): random word chosen from file
+                letters_guessed (str): users entered letters
+
+            Returns:
+                maybe (boolean): True if all letters are in word and False otherwise
+    '''
     letters_guessed = [x for x in letters_guessed]
     word = [z for z in word]
     maybe = all(x in letters_guessed for x in word)
-    # looping over list word and checking if that item is in list letters_guessed
+    # looping over the list of word and checking if that item (letter) is in list the letters_guessed
     # all() will only return true if all the items are else false
     return maybe
 
 def get_guessed_word(word, letters_guessed):
+    '''
+    Displays the current state of random word, with letters and (-).
+
+            Parameters:
+                word (str): random word chosen from file
+                letters_guessed (str): users entered letters
+
+            Returns:
+                placeholder (str): completed word or with under-scores (_)
+    '''
     placeholder = ''
     for x in word:
         if x in letters_guessed:
@@ -71,6 +100,16 @@ def get_guessed_word(word, letters_guessed):
     return placeholder
 
 def get_remaining_letters(letters_guessed):
+    '''
+    compares letters_guessed to English alphabet and return the ramaining letters which
+    are not in letters_guessed.
+
+            Parameter:
+                letters_guessed (str): letters guessed by user
+
+            Returns:
+                alphabet (str): English alphaber minus letters_guessed
+    '''
     alphabet = string.ascii_lowercase
     alphabet = [x for x in alphabet]
     for x in letters_guessed:
@@ -81,6 +120,15 @@ def get_remaining_letters(letters_guessed):
 
 
 def hangman(word):
+    '''
+    Displays welcome message and the lenght of word.
+
+            Parameter:
+                word (str): randomly chosen word from file
+
+            Returns:
+                None
+    '''
     print("Welcome to Hangman Ultimate Edition")
     print(f"I am thinking of a word that is {len(word)} letters long")
     print("-" * 12)
@@ -109,18 +157,10 @@ def main():
 
     # Uncomment the line below once you have implemented the hangman function.
     # hangman(word)
-    GUESSES = 6
+   pass
 
-    word = load_words()
-    word = random.choice(word)
 
-    hangman(word)
-    print(f'You have {GUESSES} guesses left.')
-    available_letters = string.ascii_lowercase
-    print(f'Available letters: {available_letters}')
-    guessed_letter = input('Please guess a letter: ').lower()
-    
-    get_guessed_word(word, guessed_letter)
+
 
 # Driver function for the program
 if __name__ == "__main__":
