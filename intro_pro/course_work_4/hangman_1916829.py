@@ -1,4 +1,4 @@
-# Coding Challenge 3, hangman.py
+=# Coding Challenge 3, hangman.py
 # Name:̣ Masnoud Mansouri
 # Student No: 1916829
 
