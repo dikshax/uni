@@ -1,4 +1,4 @@
-fetch('https://api.openweathermap.org/data/2.5/weather?q=Herat,&appid=a9674e7298c06e2d719d1133e6178cba')
+fetch('https://api.openweathermap.org/data/2.5/weather?q=Herat,&appid={api_key goes here}')
 
         .then(response => response.json())
         .then(response => {
