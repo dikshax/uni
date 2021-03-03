@@ -1,0 +1,3 @@
+Your MySQL account is: 1916829
+Your MySQL password is: 4al1l1
+Your MySQL database name is: db1916829
