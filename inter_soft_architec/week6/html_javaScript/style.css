@@ -1,0 +1,121 @@
+/* making some variable for color of the page */
+:root {
+    --orange: #e97808;
+    --bck-light: #555;
+    --bck-dark: #333;
+}
+
+/* Reset - getting rid of auto styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* main styling of the page */
+html,body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.7em;
+}
+
+/* utility classes */
+.container {
+    margin: auto;
+    max-width: 1400px;
+    overflow: auto;
+    padding: 0 20px;
+}
+
+
+/* styling navigation bar */
+.logo {
+    color: var(--orange);
+}
+#navbar {
+    background: var(--bck-dark);
+    color: #fff;
+    overflow: auto;
+}
+
+#navbar a {
+    color: var(--orange);
+}
+
+#navbar h1 {
+    float: left;
+    padding-top: 20px;
+}
+
+#navbar ul {
+    float: right;
+    list-style: none;
+}
+
+#navbar ul li {
+    float: left;
+    display: block;
+    padding: 15px;
+    text-align: center;
+}
+
+/* making the li to change colour when on hover state */
+#navbar ul li:hover {
+    background: #444;
+    color: #f7c08a;
+}
+
+
+/* showcase/styling for the whole background page! */
+#showcase {
+    background: var(--bck-light);
+    height: 100vh;
+}
+
+
+#showcase .showcase-content {
+    color: var(--orange);
+    text-align: center;
+    padding-top: 20px;
+}
+
+/* styling the city */
+#showcase .showcase-content #city {
+    padding: 5rem;
+    font-size: 5rem;
+}
+
+/* styling the country tag/element/h1 */
+#showcase .showcase-content #country {
+    color: var(--orange);
+    font-size: 3rem;
+    padding-top: 4rem;
+}
+
+/* styling the current temp */
+#showcase .showcase-content #tempreture {
+    /* color: #fff; */
+    font-size: 6rem;
+    padding: 4rem;
+}
+
+/* making the li, high and low temp to line in row and bigger */
+#showcase .showcase-content ul li {
+    display: inline-block;
+    font-size: 3rem;
+
+}
+
+/* adding padding between high and low temp */
+#showcase .showcase-content #high {
+    padding-right: 25rem;
+}
+
+/* styling the footer of the page */
+.main-footer{
+    background: var(--bck-dark);
+    text-align: center;
+    color: #fff;
+    padding: 5px;
+
+}
