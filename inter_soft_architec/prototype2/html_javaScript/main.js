@@ -1,12 +1,13 @@
- fetch('https://api.openweathermap.org/data/2.5/weather?q=Sheffield,uk&appid=a9674e7298c06e2d719d1133e6178cba&units=metric')
 
+fetch('https://mi-linux.wlv.ac.uk/~1916829/prototype2/api.php')
         .then(response => response.json())
         .then(response => {
             // display whole API response in brower console (take a look at it!)
         console.log(response);
 
+
         // including city name
-        document.querySelector('#city').innerHTML = response.name;
+        document.querySelector('#city').innerHTML = response.city;
 
         // including the country name
         document.querySelector('#country').innerHTML = response.sys.country;

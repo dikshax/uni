@@ -39,7 +39,7 @@ html,body {
 }
 
 #navbar a {
-    color: #fff;
+    color: var(--orange);
 }
 
 #navbar h1 {
@@ -103,7 +103,7 @@ html,body {
 #showcase .showcase-content ul li {
     display: inline-block;
     font-size: 3rem;
-  
+
 }
 
 /* adding padding between high and low temp */
