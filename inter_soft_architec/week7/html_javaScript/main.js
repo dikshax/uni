@@ -1,4 +1,4 @@
-fetch('https://api.openweathermap.org/data/2.5/weather?q=Sheffield,uk&appid=a9674e7298c06e2d719d1133e6178cba&units=metric')
+fetch('https://mi-linux.wlv.ac.uk/~1916829/week7_workings/html__javascript/my-api.php?city=London')
 
         .then(response => response.json())
         .then(response => {
