@@ -53,6 +53,7 @@ html,body {
 }
 
 #navbar ul li {
+    color: var(--orange);
     float: left;
     display: block;
     padding: 15px;
