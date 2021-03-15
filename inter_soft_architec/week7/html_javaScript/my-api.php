@@ -8,12 +8,15 @@ if ($mysqli -> connect_errno) {
     exit();
 }
 
+// first check requested daata is present and fresh
+include('data_import.php');
+
 // Execute SQL query 
 $sql = "SELECT * 
-        FROM week7 
+        FROM week_7 
         WHERE city = '{$_GET['city']}' 
         AND weather_when >= DATE_SUB(NOW(), INTERVAL 10 SECOND) 
-        ORDER BY weather_when 
+        ORDER BY time 
         DESC LIMIT 1";
 
 $result = $mysqli -> query($sql);

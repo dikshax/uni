@@ -93,6 +93,12 @@ html,body {
     padding-top: 4rem;
 }
 
+/* styling the description */
+#showcase .showcase-content #description {
+    color: var(--orange);
+    font-size: 3rem;
+    padding-top: 4rem;
+}
 /* styling the current temp */
 #showcase .showcase-content #tempreture {
     /* color: #fff; */

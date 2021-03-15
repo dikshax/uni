@@ -1,4 +1,4 @@
-fetch('https://mi-linux.wlv.ac.uk/~1916829/week7_workings/html__javascript/my-api.php?city=London')
+fetch('https://mi-linux.wlv.ac.uk/~1916829/week7_workings/html_javaScript/my-api.php?city=Sheffield')
 
         .then(response => response.json())
         .then(response => {
@@ -6,22 +6,22 @@ fetch('https://mi-linux.wlv.ac.uk/~1916829/week7_workings/html__javascript/my-ap
         console.log(response);
 
         // including city name 
-        document.querySelector('#city').innerHTML = response.name;
+        document.querySelector('#city').innerHTML = response.city;
 
         // including the country name
-        document.querySelector('#country').innerHTML = response.sys.country;
+        document.querySelector('#country').innerHTML = response.country;
         
         // getting the icon
-        document.querySelector('#pic').src = 'http://openweathermap.org/img/wn/' + response.weather[0].icon + '@4x.png';
+        document.querySelector('#pic').innerHTML = response.description;
         
         // getting the tempreture
-        document.querySelector('#tempreture').innerHTML = Math.round(response.main.temp) + '\u00B0';
+        document.querySelector('#tempreture').innerHTML = Math.round(response.temperature) + '\u00B0';
 
         // getting the high tempreture
-        document.querySelector('#high').innerHTML = 'H: ' + Math.round(response.main.temp_max) + '\u00B0';
+        document.querySelector('#high').innerHTML = 'H: ' + Math.round(response.tem_max) + '\u00B0';
 
         // getting the low  tempreture
-        document.querySelector('#low').innerHTML = 'L: ' + Math.round(response.main.temp_min) + '\u00B0';
+        document.querySelector('#low').innerHTML = 'L: ' + Math.round(response.tem_min) + '\u00B0';
         
         })
 
