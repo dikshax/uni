@@ -2,7 +2,7 @@ fetch('https://mi-linux.wlv.ac.uk/~1916829/week7_workings/html_javaScript/my-api
 
         .then(response => response.json())
         .then(response => {
-            // display whole API response in brower console (take a look at it!)
+        // display whole API response in brower console (take a look at it!)
         console.log(response);
 
         // including city name 

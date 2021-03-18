@@ -23,6 +23,9 @@ html,body {
 .container {
     margin: auto;
     max-width: 1400px;
+    /* this makes the second scroll bar to appear
+    not good spend alot of time to debug it. 
+     */
     /* overflow: auto; */
     padding: 0 20px;
 }
