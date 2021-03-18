@@ -12,7 +12,7 @@ fetch('https://mi-linux.wlv.ac.uk/~1916829/week7_workings/html_javaScript/my-api
         document.querySelector('#country').innerHTML = response.country;
         
         // getting the icon
-        document.querySelector('#pic').innerHTML = response.description;
+        document.querySelector('#description').innerHTML = response.description;
         
         // getting the tempreture
         document.querySelector('#tempreture').innerHTML = Math.round(response.temperature) + '\u00B0';
