@@ -3,7 +3,7 @@
 $mysqli = new
 mysqli('localhost', '1916829', '19chiffchaff92', 'db1916829');
 
-if ($mysqli -> connect_errno) {
+if ($mysqli -> connect_error) {
     echo 'Failed to connect to MySQL:' . $mysqli -> connect_error; 
     exit();
 }
