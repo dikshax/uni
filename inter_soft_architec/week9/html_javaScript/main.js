@@ -1,3 +1,16 @@
+// Register service worker
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function() {
+      navigator.serviceWorker.register('s_worker.js').then(function(registration) {
+        // Registration was successful
+        console.log('ServiceWorker registration successful');
+      }, function(err) {
+        // registration failed :(
+        console.log('ServiceWorker registration failed: ', err);
+      });
+    });
+  }
+
 // check brower cache first, see if there is fresh and less than 10 seconds data then use it
 
 if(localStorage.when != null && parseInt(localStorage.when) + 10000 > Date.now()){
@@ -9,10 +22,10 @@ if(localStorage.when != null && parseInt(localStorage.when) + 10000 > Date.now()
     document.getElementById('high').innerHTML = localStorage.high;
     document.getElementById('low').innerHTML = localStorage.low;
     document.getElementById('lst_updated').innerHTML = time;
-// if there is no local data, data in cache, access network, access the data base
+// if there is no local data, no data in cache, access network, access the data base
 } else {
     // fetch the weather data form my mi-linux API for a given city
-    fetch('https://mi-linux.wlv.ac.uk/~1916829/week7_workings/html_javaScript/my-api.php?city=Sheffield')
+    fetch('https://mi-linux.wlv.ac.uk/~1916829/fully_off/html_javaScript/my-api.php?city=Sheffield')
 
         .then(response => response.json())
         .then(response => {
