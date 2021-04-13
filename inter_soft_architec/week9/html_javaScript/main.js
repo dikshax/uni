@@ -1,4 +1,5 @@
 // Register service worker
+// in here the s_worker.js is get accessed and get registered
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', function() {
       navigator.serviceWorker.register('s_worker.js').then(function(registration) {
@@ -11,7 +12,7 @@ if ('serviceWorker' in navigator) {
     });
   }
 
-// check brower cache first, see if there is fresh and less than 10 seconds data then use it
+// check brower cache first, see if there is fresh and less than 10 seconds data, if yeah then use it
 
 if(localStorage.when != null && parseInt(localStorage.when) + 10000 > Date.now()){
     let time = Math.round((Date.now() - localStorage.when)/1000) + "seconds(s)";
@@ -22,7 +23,8 @@ if(localStorage.when != null && parseInt(localStorage.when) + 10000 > Date.now()
     document.getElementById('high').innerHTML = localStorage.high;
     document.getElementById('low').innerHTML = localStorage.low;
     document.getElementById('lst_updated').innerHTML = time;
-// if there is no local data, no data in cache, access network, access the data base
+
+// if there is no local data, no data in cache, access network, access the data base, i mean get the data from my data base in mi-linux account
 } else {
     // fetch the weather data form my mi-linux API for a given city
     fetch('https://mi-linux.wlv.ac.uk/~1916829/fully_off/html_javaScript/my-api.php?city=Sheffield')
@@ -53,18 +55,36 @@ if(localStorage.when != null && parseInt(localStorage.when) + 10000 > Date.now()
         // getting the time
         document.querySelector('#time').innerHTML = response.time;
         
+        
+        // now that you got the data from mi-linux
         // save the new data to browser, with new timestamp
-        localStorage.time = time.innerHTML;
-        localStorage.city = city.innerHTML;
-        localStorage.country = country.innerHTML;
-        localStorage.description = description.innerHTML;
-        localStorage.temperature = tempreture.innerHTML;
-        localStorage.high = high.innerHTML;
-        localStorage.low = low.innerHTML;
+        localStorage.time = response.time;
+        localStorage.city = response.city;
+        localStorage.country = response.country;
+        localStorage.description = response.description;
+        localStorage.temperature = response.temperature;
+        localStorage.high = response.high;
+        localStorage.low = response.low;
         })
         .catch(err => {
+          // if fetching data from network/ mi-linux failled
+          // access the data from cache and display
+
+          if(localStorage.when != null){
+            // get the data from cache
+            let time = Math.round((Date.now() - localStorage.when)/1000) + "seconds(s)";
+            document.getElementById('city').innerHTML = localStorage.city;
+            document.getElementById('country').innerHTML = localStorage.country;
+            document.getElementById('description').innerHTML = localStorage.description;
+            document.getElementById('tempreture').innerHTML = localStorage.temperature;
+            document.getElementById('high').innerHTML = localStorage.high;
+            document.getElementById('low').innerHTML = localStorage.low;
+            document.getElementById('lst_updated').innerHTML = time;
+
+          } else {
             // display errors on console
             console.log(err)
+          }
         });
 }
 
