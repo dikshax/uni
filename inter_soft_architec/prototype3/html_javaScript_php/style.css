@@ -1,0 +1,168 @@
+/* making some variable for color of the page */
+:root {
+    --orange: #e97808;
+    --bck-light: #555;
+    --bck-dark: #333;
+
+    /* font sizes */
+    --fnt_xs: 1rem;
+    --fnt_s: 3rem;
+    --fnt_b: 5rem;
+}
+
+/* Reset - getting rid of auto styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* main styling of the page */
+html,body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.7em;
+}
+
+/* utility classes */
+.container {
+    margin: auto;
+    max-width: 1400px;
+    /* overflow: auto; */
+    padding: 0 20px;
+}
+
+
+/* styling navigation bar */
+.logo {
+    color: var(--orange);
+}
+#navbar {
+    background: var(--bck-dark);
+    color: #fff;
+    overflow: auto;
+}
+
+#navbar a {
+    color: var(--orange);
+}
+
+#navbar h1 {
+    float: left;
+    padding-top: 20px;
+}
+
+#navbar ul {
+    float: right;
+    list-style: none;
+}
+
+#navbar ul li {
+    color: var(--orange);
+    float: left;
+    display: block;
+    padding: 15px;
+    text-align: center;
+}
+
+/* change the style of the navbar in smaller screen under 500px */
+@media (max-width: 500px) {
+    .logo {
+        color: var(--orange);
+        display: inline-block;
+        margin-left: auto;
+        margin-right: auto;
+        /* text-align: center; */
+    }
+    #navbar ul li {
+        color: var(--orange);
+        float: none;
+        display: inline-block;
+        padding: 15px;
+        text-align: center;
+    }
+}
+/* making the li to change colour when on hover state */
+#navbar ul li:hover {
+    background: #444;
+    color: #f7c08a;
+}
+
+
+/* showcase/styling for the whole background page! */
+#showcase {
+    background: var(--bck-light);
+    height: 100vh;
+}
+
+
+#showcase .showcase-content {
+    color: var(--orange);
+    text-align: center;
+    padding-top: 20px;
+}
+
+/* styling the city */
+#showcase .showcase-content #city {
+    padding: var(--fnt_b);
+    font-size: var(--fnt_b);
+}
+
+/* styling the country tag/element/h1 */
+#showcase .showcase-content #country {
+    color: var(--orange);
+    font-size: var(--fnt_s);
+    padding-top: var(--fnt_s);
+}
+
+/* styling the description */
+#showcase .showcase-content #description {
+    color: var(--orange);
+    font-size: var(--fnt_s);
+    padding-top: var(--fnt_s);
+}
+/* styling the current temp */
+#showcase .showcase-content #tempreture {
+    /* color: #fff; */
+    font-size: var(--fnt_b);
+    padding: var(--fnt_s);
+}
+
+/* making the li, high and low temp to line in row and bigger */
+#showcase .showcase-content ul li {
+    display: inline-block;
+    font-size: 3rem;
+}
+
+@media(max-width: 500px) {
+    #showcase .showcase-content #city {
+        padding: var(--fnt_s);
+        font-size: var(--fnt_s);
+    }
+
+    #showcase .showcase-content #tempreture {
+        /* color: #fff; */
+        font-size: var(--fnt_s);
+    }
+
+
+    #showcase .showcase-content ul li {
+        display: none;
+        text-align: center;
+        font-size: var(--fnt_s);
+    }
+}
+
+/* adding padding between high and low temp */
+#showcase .showcase-content #high {
+    padding-right: 25rem;
+}
+
+/* styling the footer of the page */
+.main-footer{
+    background: var(--bck-dark);
+    text-align: center;
+    color: #fff;
+    padding: 5px;
+
+}
